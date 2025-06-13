@@ -28,7 +28,6 @@
     }
   </style>
   <body class="bg-[#34234F] text-white">
-    <!-- Header -->
     <header
       class="fixed top-0 w-full z-50 shadow"
       style="background-color: #34234f"
@@ -37,11 +36,12 @@
         class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3"
       >
         <div class="flex items-center space-x-3 text-white">
-          <h2>MEJARITO</h2>
+          <h2 class="text-xl font-bold">MEJARITO</h2>
         </div>
         <button
           class="md:hidden focus:outline-none text-white"
           id="menu-toggle"
+          aria-label="Toggle navigation menu"
         >
           <svg
             class="w-6 h-6"
@@ -59,7 +59,7 @@
           </svg>
         </button>
         <nav
-          class="hidden md:flex items-center space-x-9 text-white"
+          class="hidden md:flex items-center space-x-6 lg:space-x-9 text-white"
           id="nav-menu"
         >
           <a href="#" class="hover:text-[#E84EA3] no-underline">Home</a>
@@ -74,36 +74,39 @@
       </div>
       <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 text-white">
         <nav class="flex flex-col space-y-2">
-          <a href="#" class="hover:text-[#E84EA3]">Home</a>
-          <a href="#aboutme" class="hover:text-[#E84EA3]">About</a>
-          <a href="#project" class="hover:text-[#E84EA3]">Projects</a>
-          <a href="#contact" class="hover:text-[#E84EA3]">Contact</a>
+          <a href="#" class="hover:text-[#E84EA3] py-2">Home</a>
+          <a href="#aboutme" class="hover:text-[#E84EA3] py-2">About</a>
+          <a href="#project" class="hover:text-[#E84EA3] py-2">Projects</a>
+          <a href="#contact" class="hover:text-[#E84EA3] py-2">Contact</a>
         </nav>
       </div>
     </header>
 
     <div id="mainContent">
-      <!-- Home Section -->
       <section
         id="home"
-        class="min-h-screen max-w-7xl mx-auto px-4 pb-10 pt-[150px] bg-[#34234F]"
+        class="min-h-screen max-w-7xl mx-auto px-4 pb-10 pt-[100px] md:pt-[120px] bg-[#34234F] flex items-center"
       >
         <div
-          class="flex flex-col-reverse md:flex-row items-center justify-between gap-10"
+          class="flex flex-col-reverse md:flex-row items-center justify-between gap-10 w-full"
         >
           <div
             data-aos="fade-up"
             data-aos-duration="2000"
             data-aos-anchor-placement="top-bottom"
             data-aos-once="false"
-            class="tracking-wide w-[1000px]"
+            class="tracking-wide md:w-1/2 text-center md:text-left"
           >
-            <p class="font-bold text-5xl leading-snug text-white">
+            <p
+              class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-snug text-white"
+            >
               Hi! Mara Jehan R. Mejarito - <br />
               a <span class="text-[#7A73D1]">Junior Front-End Developer</span>.
             </p>
             <br />
-            <p class="text-sm text-justify indent-8 leading-loose text-white">
+            <p
+              class="text-sm sm:text-base text-justify indent-8 leading-loose text-white"
+            >
               I specialize in building responsive and user-focused web
               interfaces using modern technologies such as HTML, CSS,
               JavaScript, and Tailwind CSS. With a strong passion for clean
@@ -111,17 +114,19 @@
               bring ideas to life.
             </p>
 
-            <div class="mt-6">
+            <div
+              class="mt-6 flex flex-col sm:flex-row justify-center md:justify-start gap-4"
+            >
               <a
                 href="#project"
-                class="w-[160px] border-2 border-[#E84EA3] rounded-2xl p-2 hover:border-[#7A73D1] inline-block text-center text-white"
+                class="w-full sm:w-[160px] border-2 border-[#E84EA3] rounded-2xl p-2 hover:border-[#7A73D1] inline-block text-center text-white transition-colors duration-300"
               >
                 View Projects
               </a>
               <a
                 href="/Mara_Jehan_Mejarito_Resume.pdf"
                 download
-                class="w-[160px] bg-[#E84EA3] border-2 border-[#E84EA3] rounded-2xl ml-6 p-2 hover:bg-[#7A73D1] hover:border-[#7A73D1] inline-block text-center text-white"
+                class="w-full sm:w-[160px] bg-[#E84EA3] border-2 border-[#E84EA3] rounded-2xl sm:ml-6 p-2 hover:bg-[#7A73D1] hover:border-[#7A73D1] inline-block text-center text-white transition-colors duration-300"
               >
                 Download CV
               </a>
@@ -135,13 +140,12 @@
             <img
               src="/developer-doing-programming-on-laptop-illustration-download-in-svg-png-gif-file-formats--online-coding-pack-design-development-illustrations-11934866.webp"
               alt="Developer Illustration"
-              class="w-[350px] md:w-[400px]"
+              class="w-full max-w-[350px] md:max-w-[400px] h-auto"
             />
           </div>
         </div>
       </section>
 
-      <!-- About -->
       <section
         id="aboutme"
         class="min-h-screen px-4 pb-10 pt-[50px] bg-[#14092A]"
@@ -153,18 +157,19 @@
           data-aos-once="false"
           class="max-w-7xl mx-auto"
         >
-          <!-- About Me -->
           <h1 class="text-3xl mb-6 font-semibold text-center text-[#E84EA3]">
             About
           </h1>
-          <p class="text-sm text-justify indent-8 leading-loose text-white">
+          <p
+            class="text-sm sm:text-base text-justify indent-8 leading-loose text-white"
+          >
             Hi! I'm a junior front-end developer and a graduating BSIT student
             at DHVSU. I enjoy building responsive and user-friendly web
             applications, with a focus on clean and simple design using modern
             tools and technologies.
           </p>
           <p
-            class="text-sm text-justify indent-8 leading-loose mt-4 text-white"
+            class="text-sm sm:text-base text-justify indent-8 leading-loose mt-4 text-white"
           >
             I'm always eager to learn new things and grow through hands-on
             projects and real experience. My goal is to be part of a team where
@@ -172,96 +177,102 @@
             work together.
           </p>
 
-          <!-- Skills Section -->
-          <div class="mt-5">
-            <h2 class="text-3xl mb-5 font-semibold text-center text-[#E84EA3]">
+          <div class="mt-10">
+            <h2 class="text-3xl mb-8 font-semibold text-center text-[#E84EA3]">
               My Skills
             </h2>
             <div
-              class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto"
+              class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 max-w-5xl mx-auto"
             >
-              <!-- Skill Card -->
               <div
-                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center"
+                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000"
                   alt="HTML"
-                  class="h-16 mb-2"
+                  class="h-12 w-12 sm:h-16 sm:w-16 mb-2"
                 />
-                <p class="text-white font-semibold">HTML</p>
+                <p class="text-white font-semibold text-sm sm:text-base">
+                  HTML
+                </p>
               </div>
               <div
-                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center"
+                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000"
                   alt="CSS"
-                  class="h-16 mb-2"
+                  class="h-12 w-12 sm:h-16 sm:w-16 mb-2"
                 />
-                <p class="text-white font-semibold">CSS</p>
+                <p class="text-white font-semibold text-sm sm:text-base">CSS</p>
               </div>
               <div
-                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center"
+                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src="https://img.icons8.com/color/200/tailwind_css.png"
                   alt="Tailwind CSS"
-                  class="h-16 mb-2"
+                  class="h-12 w-12 sm:h-16 sm:w-16 mb-2"
                 />
-                <p class="text-white font-semibold text-center">Tailwind CSS</p>
+                <p class="text-white font-semibold text-sm sm:text-base">
+                  Tailwind CSS
+                </p>
               </div>
               <div
-                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center"
+                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000"
                   alt="JavaScript"
-                  class="h-16 mb-2"
+                  class="h-12 w-12 sm:h-16 sm:w-16 mb-2"
                 />
-                <p class="text-white font-semibold">JavaScript</p>
+                <p class="text-white font-semibold text-sm sm:text-base">
+                  JavaScript
+                </p>
               </div>
               <div
-                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center"
+                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src="https://img.icons8.com/?size=100&id=fAMVO_fuoOuC&format=png&color=000000"
                   alt="PHP"
-                  class="h-16 mb-2"
+                  class="h-12 w-12 sm:h-16 sm:w-16 mb-2"
                 />
-                <p class="text-white font-semibold">PHP</p>
+                <p class="text-white font-semibold text-sm sm:text-base">PHP</p>
               </div>
               <div
-                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center"
+                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src="https://img.icons8.com/?size=100&id=20906&format=png&color=000000"
                   alt="Git"
-                  class="h-16 mb-2"
+                  class="h-12 w-12 sm:h-16 sm:w-16 mb-2"
                 />
-                <p class="text-white font-semibold text-center">
+                <p class="text-white font-semibold text-sm sm:text-base">
                   Git Source Control
                 </p>
               </div>
               <div
-                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center"
+                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000"
                   alt="Figma"
-                  class="h-16 mb-2"
+                  class="h-12 w-12 sm:h-16 sm:w-16 mb-2"
                 />
-                <p class="text-white font-semibold">Figma</p>
+                <p class="text-white font-semibold text-sm sm:text-base">
+                  Figma
+                </p>
               </div>
               <div
-                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center"
+                class="bg-[#1f093b] rounded-lg p-4 flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src="https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000"
                   alt="VS Code"
-                  class="h-16 mb-2"
+                  class="h-12 w-12 sm:h-16 sm:w-16 mb-2"
                 />
-                <p class="text-white font-semibold text-center">
+                <p class="text-white font-semibold text-sm sm:text-base">
                   Visual Studio Code
                 </p>
               </div>
@@ -270,7 +281,6 @@
         </div>
       </section>
 
-      <!-- Projects -->
       <section
         id="project"
         class="min-h-screen px-4 pb-10 pt-[50px] bg-[#34234F]"
@@ -284,21 +294,21 @@
           <h1 class="text-3xl mb-2 font-semibold text-center text-[#E84EA3]">
             Projects
           </h1>
-          <p class="text-sm text-center mb-5 text-white leading-relaxed">
+          <p
+            class="text-sm sm:text-base text-center mb-8 text-white leading-relaxed max-w-2xl mx-auto"
+          >
             During my OJT, I worked on the front-end development of the JJMIS
             Single-Page Website, the Interactive Map, and the Property
             Management System, focusing on responsive design and user interface
             enhancements.
           </p>
 
-          <!-- Project Cards Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Card: JJMIS -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div
-              class="relative bg-[#3E2B60] rounded-xl overflow-hidden shadow-lg p-4 flex flex-col h-full"
+              class="relative bg-[#3E2B60] rounded-xl overflow-hidden shadow-lg p-6 flex flex-col h-full"
             >
-              <h3 class="text-[#7A73D1] font-semibold text-lg mb-3">JJMIS</h3>
-              <div class="relative mb-4 h-auto">
+              <h3 class="text-[#7A73D1] font-semibold text-xl mb-4">JJMIS</h3>
+              <div class="relative mb-6">
                 <div
                   class="absolute top-0 left-0 w-full h-full bg-[#5E4B8B] rounded-xl z-0 translate-y-4"
                 ></div>
@@ -306,16 +316,18 @@
                   class="absolute top-0 left-0 w-full h-full bg-[#6C5EBE] rounded-xl z-10 translate-y-2"
                 ></div>
                 <div
-                  class="relative z-20 overflow-hidden rounded-xl group w-96 h-64"
+                  class="relative z-20 overflow-hidden rounded-xl group w-full h-48 sm:h-56"
                 >
                   <img
-                    src="https://burst.shopifycdn.com/photos/coding-on-laptop.jpg?width=1000&format=pjpg&exif=0&iptc=0"
-                    alt="Map Screenshot"
+                    src="/img/jjmis.jpg"
+                    alt="Image"
                     class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
               </div>
-              <p class="text-white text-sm mb-3 mt-8 text-justify indent-4">
+              <p
+                class="text-white text-sm sm:text-base mb-4 mt-8 text-justify indent-4 flex-grow"
+              >
                 I developed a responsive single-page front-end for JJMIS using
                 Tailwind CSS, based on the existing JJWC system design, to
                 improve the layout and enhance user experience.
@@ -324,7 +336,7 @@
                 <a
                   href="https://github.com/keisxii/jjmis"
                   target="_blank"
-                  class="inline-flex items-center gap-2 text-white hover:text-[#E84EA3] transition-colors"
+                  class="inline-flex items-center gap-2 text-white hover:text-[#E84EA3] transition-colors duration-300"
                 >
                   <img
                     src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF"
@@ -336,61 +348,13 @@
               </div>
             </div>
 
-            <!-- Card: Interactive Map -->
             <div
-              class="relative bg-[#3E2B60] rounded-xl overflow-hidden shadow-lg p-4 flex flex-col h-full"
+              class="relative bg-[#3E2B60] rounded-xl overflow-hidden shadow-lg p-6 flex flex-col h-full"
             >
-              <h3 class="text-[#7A73D1] font-semibold text-lg mb-3">
-                Philippines Interactive Map
-              </h3>
-              <div class="relative mb-4 h-auto">
-                <div
-                  class="absolute top-0 left-0 w-full h-full bg-[#5E4B8B] rounded-xl z-0 translate-y-4"
-                ></div>
-                <div
-                  class="absolute top-0 left-0 w-full h-full bg-[#6C5EBE] rounded-xl z-10 translate-y-2"
-                ></div>
-                <div
-                  class="relative z-20 overflow-hidden rounded-xl group w-96 h-64"
-                >
-                  <img
-                    src="https://burst.shopifycdn.com/photos/coding-on-laptop.jpg?width=1000&format=pjpg&exif=0&iptc=0"
-                    alt="Map Screenshot"
-                    class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-              <p class="text-white text-sm mb-3 mt-8 text-justify indent-4">
-                The Philippines Interactive Map lets users explore different
-                administrative levels — regions, provinces,
-                cities/municipalities, and barangays. The view adjusts based on
-                the user's role, showing relevant polygons for their access
-                level.
-              </p>
-              <div class="mt-auto pt-4">
-                <a
-                  href="https://github.com/keisxii/map"
-                  target="_blank"
-                  class="inline-flex items-center gap-2 text-white hover:text-[#E84EA3] transition-colors"
-                >
-                  <img
-                    src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF"
-                    class="w-5 h-5"
-                    alt="GitHub Icon"
-                  />
-                  <span class="text-sm">View on GitHub</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Card: Property Management System -->
-            <div
-              class="relative bg-[#3E2B60] rounded-xl overflow-hidden shadow-lg p-4 flex flex-col h-full"
-            >
-              <h3 class="text-[#7A73D1] font-semibold text-lg mb-3">
+              <h3 class="text-[#7A73D1] font-semibold text-xl mb-4">
                 Property Management System
               </h3>
-              <div class="relative mb-4 h-auto">
+              <div class="relative mb-6">
                 <div
                   class="absolute top-0 left-0 w-full h-full bg-[#5E4B8B] rounded-xl z-0 translate-y-4"
                 ></div>
@@ -398,16 +362,18 @@
                   class="absolute top-0 left-0 w-full h-full bg-[#6C5EBE] rounded-xl z-10 translate-y-2"
                 ></div>
                 <div
-                  class="relative z-20 overflow-hidden rounded-xl group w-96 h-64"
+                  class="relative z-20 overflow-hidden rounded-xl group w-full h-48 sm:h-56"
                 >
                   <img
-                    src="https://burst.shopifycdn.com/photos/coding-on-laptop.jpg?width=1000&format=pjpg&exif=0&iptc=0"
-                    alt="Map Screenshot"
+                    src="/img/pms.jpg"
+                    alt="Image"
                     class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
               </div>
-              <p class="text-white text-sm mb-3 mt-8 text-justify indent-4">
+              <p
+                class="text-white text-sm sm:text-base mb-4 mt-8 text-justify indent-4 flex-grow"
+              >
                 The Property Management System is designed to handle asset
                 tracking, requisition slips (RIS), and employee profile
                 management. I focused on creating user-friendly interfaces and
@@ -418,7 +384,54 @@
                 <a
                   href="https://github.com/keisxii/property-management-system"
                   target="_blank"
-                  class="inline-flex items-center gap-2 text-white hover:text-[#E84EA3] transition-colors"
+                  class="inline-flex items-center gap-2 text-white hover:text-[#E84EA3] transition-colors duration-300"
+                >
+                  <img
+                    src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF"
+                    class="w-5 h-5"
+                    alt="GitHub Icon"
+                  />
+                  <span class="text-sm">View on GitHub</span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="relative bg-[#3E2B60] rounded-xl overflow-hidden shadow-lg p-6 flex flex-col h-full"
+            >
+              <h3 class="text-[#7A73D1] font-semibold text-xl mb-4">
+                Philippines Interactive Map
+              </h3>
+              <div class="relative mb-6">
+                <div
+                  class="absolute top-0 left-0 w-full h-full bg-[#5E4B8B] rounded-xl z-0 translate-y-4"
+                ></div>
+                <div
+                  class="absolute top-0 left-0 w-full h-full bg-[#6C5EBE] rounded-xl z-10 translate-y-2"
+                ></div>
+                <div
+                  class="relative z-20 overflow-hidden rounded-xl group w-full h-48 sm:h-56"
+                >
+                  <img
+                    src="/img/map.jpg"
+                    alt="Image"
+                    class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+              </div>
+              <p
+                class="text-white text-sm sm:text-base mb-4 mt-8 text-justify indent-4 flex-grow"
+              >
+                The Philippines Interactive Map lets users explore different
+                administrative levels — regions, provinces,
+                cities/municipalities, and barangays. The view adjusts based on
+                the user's role, showing relevant polygons for their access
+                level.
+              </p>
+              <div class="mt-auto pt-4">
+                <a
+                  href="https://github.com/keisxii/map"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 text-white hover:text-[#E84EA3] transition-colors duration-300"
                 >
                   <img
                     src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF"
@@ -433,7 +446,6 @@
         </div>
       </section>
 
-      <!--Contact Section -->
       <section
         id="contact"
         class="w-full px-4 pb-10 pt-[50px] bg-[#14092A] text-white"
@@ -445,68 +457,85 @@
             class="flex flex-col md:flex-row justify-center items-center gap-4 mb-4"
           >
             <div
-              class="flex items-center justify-center gap-2 bg-[#4C2885] px-4 py-2 rounded-lg w-[350px] h-[50px] cursor-pointer hover:bg-[#402073]"
+              class="flex items-center justify-center gap-2 bg-[#4C2885] px-4 py-3 rounded-lg w-full max-w-[350px] h-[50px] cursor-pointer hover:bg-[#402073] transition-colors duration-300"
             >
               <span class="material-symbols-outlined text-white text-xl"
                 >mail</span
               >
-              <span class="text-white text-sm"
+              <span class="text-white text-sm sm:text-base"
                 >marajehanmejari0918@gmail.com</span
               >
             </div>
             <div
-              class="flex items-center justify-center gap-2 bg-[#4C2885] px-4 py-2 rounded-lg w-[350px] h-[50px] cursor-pointer hover:bg-[#402073]"
+              class="flex items-center justify-center gap-2 bg-[#4C2885] px-4 py-3 rounded-lg w-full max-w-[350px] h-[50px] cursor-pointer hover:bg-[#402073] transition-colors duration-300"
             >
               <span class="material-symbols-outlined text-white text-xl"
                 >call</span
               >
-              <span class="text-white text-sm">0999 - 7920 - 082</span>
+              <span class="text-white text-sm sm:text-base"
+                >0999 - 7920 - 082</span
+              >
             </div>
           </div>
 
           <div class="flex justify-center mb-6">
             <div
-              class="flex items-center justify-center gap-2 bg-[#4C2885] px-4 py-2 rounded-lg w-[350px] h-[50px] cursor-pointer hover:bg-[#402073]"
+              class="flex items-center justify-center gap-2 bg-[#4C2885] px-4 py-3 rounded-lg w-full max-w-[350px] h-[50px] cursor-pointer hover:bg-[#402073] transition-colors duration-300"
             >
               <span class="material-symbols-outlined text-white text-xl"
                 >location_on</span
               >
-              <span class="text-white text-sm">San Simon, Pampanga</span>
+              <span class="text-white text-sm sm:text-base"
+                >San Simon, Pampanga</span
+              >
             </div>
           </div>
 
           <div
-            class="flex justify-center items-center gap-6 text-white text-xl"
+            class="flex justify-center items-center gap-6 text-white text-xl mb-8"
           >
             <a
               href="https://www.facebook.com/jehan.mejarito"
               target="_blank"
               class="group"
+              aria-label="Facebook profile"
             >
               <img
                 src="https://img.icons8.com/?size=100&id=118467&format=png&color=FFFFFF"
                 alt="Facebook icon"
-                class="w-6 h-6 cursor-pointer transform transition duration-300 group-hover:scale-110"
+                class="w-6 h-6 sm:w-7 sm:h-7 cursor-pointer transform transition duration-300 group-hover:scale-110"
               />
             </a>
-            <a href="https://github.com/keisxii" target="_blank" class="group">
+            <a
+              href="https://github.com/keisxii"
+              target="_blank"
+              class="group"
+              aria-label="GitHub profile"
+            >
               <img
                 src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=FFFFFF"
                 alt="GitHub icon"
-                class="w-6 h-6 cursor-pointer transform transition duration-300 group-hover:scale-110"
+                class="w-6 h-6 sm:w-7 sm:h-7 cursor-pointer transform transition duration-300 group-hover:scale-110"
               />
             </a>
-            <a href="#" target="_blank" class="group">
+            <a
+              href="https://www.linkedin.com/in/mara-jehan-m-7bb827344/"
+              target="_blank"
+              class="group"
+              aria-label="LinkedIn profile"
+            >
               <img
                 src="https://img.icons8.com/?size=100&id=8808&format=png&color=FFFFFF"
                 alt="LinkedIn icon"
-                class="w-6 h-6 cursor-pointer transform transition duration-300 group-hover:scale-110"
+                class="w-6 h-6 sm:w-7 sm:h-7 cursor-pointer transform transition duration-300 group-hover:scale-110"
               />
             </a>
           </div>
           <div
-            class="mt-6 border-t border-[#E84EA3] w-full max-w-full mx-auto"
-          ></div>
+            class="mt-6 border-t border-[#E84EA3] w-full max-w-full mx-auto pt-4 text-xs sm:text-sm text-gray-400"
+          >
+            &copy; 2025 Mejarito. All rights reserved.
+          </div>
         </div>
       </section>
     </div>
@@ -514,13 +543,23 @@
       //HEADER
       const toggleBtn = document.getElementById("menu-toggle");
       const mobileMenu = document.getElementById("mobile-menu");
+      const navLinks = mobileMenu.querySelectorAll("a");
+
       toggleBtn.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
       });
 
-      AOS.init({
-        once: false,
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
       });
+
+      if (typeof AOS !== "undefined") {
+        AOS.init({
+          once: false,
+        });
+      }
     </script>
   </body>
 </html>
