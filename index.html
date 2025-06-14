@@ -16,6 +16,7 @@
     />
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   </head>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
@@ -26,8 +27,69 @@
       box-sizing: border-box;
       font-family: "Poppins", sans-serif;
     }
+
+    @layer utilities {
+      @keyframes fadeIn {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeOutPink {
+        0% {
+          opacity: 1;
+          color: white;
+        }
+        50% {
+          color: #f472b6;
+        }
+        100% {
+          opacity: 0;
+          color: #f472b6;
+        }
+      }
+      @keyframes fadeInSlow {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate-fadeInSlow {
+        animation: fadeInSlow 1.5s ease-in-out forwards;
+      }
+
+      .animate-fadeIn {
+        animation: fadeIn 2.5s ease-in-out forwards;
+      }
+
+      .animate-fadeOutPink {
+        animation: fadeOutPink 2s ease-in-out forwards;
+      }
+    }
   </style>
   <body class="bg-[#0c011d] text-white">
+    <div
+      id="preloader"
+      class="fixed inset-0 bg-[#0c011d] z-50 flex items-center justify-center"
+    >
+      <div class="flex flex-row items-center gap-2">
+        <p class="text-xl sm:text-2xl tracking-wide text-center">
+          <span class="text-white animate-fadeOutPink delay-1000">
+            Mara Jehan Mejarito
+          </span>
+        </p>
+        <p class="text-white text-2xl sm:text-3xl tracking-wide text-center">
+          <span class="font-normal animate-fadeIn delay-1000"> Portfolio </span>
+        </p>
+      </div>
+    </div>
+
     <header class="w-full z-50" style="background-color: #0c011d">
       <div
         class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3"
@@ -79,7 +141,7 @@
       </div>
     </header>
 
-    <div id="mainContent">
+    <div id="mainContent" class="animate-fadeInSlow">
       <section
         id="home"
         class="min-h-screen max-w-7xl mx-auto px-4 pb-10 bg-[#0c011d] flex items-center"
@@ -100,9 +162,11 @@
               Hi! Mara Jehan R. Mejarito - <br />
               a <span class="text-[#7A73D1]">Junior Front-End Developer</span>.
             </p>
+
             <br />
             <p
-              class="text-sm sm:text-base text-justify indent-8 leading-loose text-white"
+              id="introText"
+              class="text-sm sm:text-base text-white leading-loose text-justify md:text-left"
             >
               I specialize in building responsive and user-focused web
               interfaces using modern technologies such as HTML, CSS,
@@ -129,15 +193,16 @@
               </a>
             </div>
           </div>
+
           <div
             data-aos="fade-down"
             data-aos-duration="2000"
             class="w-full md:w-1/2 flex justify-center"
           >
             <img
-              src="https://static.vecteezy.com/system/resources/previews/044/428/114/non_2x/cartoon-character-with-the-desk-working-concept-illustration-free-png.png"
+              src="https://user-images.githubusercontent.com/74038190/219923809-b86dc415-a0c2-4a38-bc88-ad6cf06395a8.gif"
               alt="Developer Illustration"
-              class="w-full max-w-[450px] md:max-w-[400px] h-auto"
+              class="w-full max-w-[450px] md:max-w-[450px] h-auto"
             />
           </div>
         </div>
@@ -537,7 +602,33 @@
       </section>
     </div>
     <script>
-      //HEADER
+      window.addEventListener("DOMContentLoaded", () => {
+        const preloader = document.getElementById("preloader");
+        const mainContent = document.getElementById("mainContent");
+        const intro = document.getElementById("introText");
+
+        mainContent.style.display = "none";
+
+        setTimeout(() => {
+          preloader.style.display = "none";
+          mainContent.style.display = "block";
+
+          // Once preloader is gone and content is shown, run text animation
+          splitWords(intro);
+
+          gsap.to(".word", {
+            opacity: 1,
+            y: 0,
+            stagger: 0.06,
+            delay: 0.3,
+            duration: 0.6,
+            ease: "bounce.out",
+            from: { y: -40 },
+          });
+        }, 2000);
+      });
+
+      // Rest of your code
       const toggleBtn = document.getElementById("menu-toggle");
       const mobileMenu = document.getElementById("mobile-menu");
       const navLinks = mobileMenu.querySelectorAll("a");
@@ -553,9 +644,19 @@
       });
 
       if (typeof AOS !== "undefined") {
-        AOS.init({
-          once: false,
-        });
+        AOS.init({ once: false });
+      }
+
+      function splitWords(element) {
+        const text = element.innerText.trim();
+        const words = text.split(" ");
+        const wrappedWords = words
+          .map(
+            (word) =>
+              `<span class="inline-block opacity-0 word">${word}&nbsp;</span>`
+          )
+          .join("");
+        element.innerHTML = wrappedWords;
       }
     </script>
   </body>
